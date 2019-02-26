@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="" name="description" />
+    <meta content="webthemez" name="author" />
+    <title>乐送派-商家管理系统</title>
+    <!-- Bootstrap Styles-->
+    <link rel="stylesheet" href="assets/css/amazeui.css" />
+    <link rel="stylesheet" href="assets/css/core.css" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="goods_manage.html"><strong> 乐送派-商家管理</strong></a>
+                <div id="sideNav" href="">
+                    <i class="fa fa-bars icon"></i>
+                </div>
+            </div>
+            <ul class="nav navbar-top-links navbar-right"><a href="../lesong.html">退出</a>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> 用户信息</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 反馈客服</a>
+                        </li>
+                        </ul-->
+                        <!-- /.dropdown-user -->
+                </li>
+                </.dropdown>
+                </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="create_store.html"><i class="fa fa-dashboard"></i> 创建商铺</a>
+                    </li>
+                    <li>
+                        <a class="active-menu" href="goods_manage.html"><i class="fa fa-desktop"></i> 商品管理</a>
+                    </li>
+                    <li>
+                        <a href="order_history.html"><i class="fa fa-table"></i> 历史订单</a>
+                    </li>
+                    <li>
+                        <a href="dynamic.html"><i class="fa fa-qrcode"></i> 订阅动态</a>
+                    </li>
+                    <li>
+                        <a href="business_profile.html"><i class="fa fa-edit"></i>商家资料 </a>
+                    </li>
+                    <li>
+                        <a href="system_message.html"><i class="fa fa-fw fa-file"></i> 系统消息</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div class="header">
+                <h1 class="page-header" style="padding: 32px  22px  12px  0">
+                           商品管理
+                        </h1>
+            </div>
+            <div id="page-inner">
+                <!-- Start right Content here -->
+                <div class="content-page">
+                    <!-- Start content -->
+                    <div class="content">
+                        <div class="card-box">
+                            <!-- Row start -->
+                            <div class="am-g">
+                                <div class="am-u-sm-12 am-u-md-6">
+                                    <div class="am-btn-toolbar">
+                                        <div class="am-btn-group am-btn-group-xs">
+                                            <button type="button" class="am-btn am-btn-default" data-am-modal="{target: '#doc-modal-1', closeViaDimmer: 0, }">
+                                                <span class="am-icon-plus"></span> 新增</button>
+
+
+
+                                            <!--商品上架提示框-->
+                                            <div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+                                                <div class="am-modal-dialog">
+                                                    <div class="am-modal-hd">商品上架
+                                                        <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+                                                    </div>
+                                                    <div class="am-modal-footer">
+                                                        <br>
+                                                        <br>
+                                                    </div>
+                                                    <br>
+                                                    <form class="am-form am-form-horizontal">
+                                                        <div class="am-form-group">
+                                                            <label for="doc-ipt-3" class="am-u-sm-3 am-form-label" style="padding-right: 5px;">商品名称</label>
+                                                            <div class="am-u-sm-9" style="width: 320px;float: left;">
+                                                                <input type="text" id="doc-ipt-3">
+                                                            </div>
+                                                        </div>
+                                                        <div class="am-form-group">
+                                                            <label for="doc-ipt-3" class="am-u-sm-3 am-form-label" style="padding-right: 5px;">类别</label>
+                                                            <div class="am-u-sm-9" style="width: 320px;float: left;">
+                                                                <label class="am-radio-inline">
+                                                                    <input type="radio" value="" name="docInlineRadio"> 水果
+                                                                </label>
+                                                                <label class="am-radio-inline">
+                                                                    <input type="radio" name="docInlineRadio"> 器皿
+                                                                </label>
+                                                                <label class="am-radio-inline">
+                                                                    <input type="radio" name="docInlineRadio">特价
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="am-form-group">
+                                                            <label for="doc-ipt-3" class="am-u-sm-3 am-form-label" style="padding-right: 5px;">价格（/斤）</label>
+                                                            <div class="am-u-sm-9" style="width: 320px;float: left;">
+                                                                <input type="text" id="doc-ipt-3" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="am-form-group">
+                                                            <label for="doc-ipt-3" class="am-u-sm-3 am-form-label" style="padding-right: 5px;">数量</label>
+                                                            <div class="am-u-sm-9" style="width: 320px;float: left;">
+                                                                <input type="text" id="doc-ipt-3" placeholder="">
+                                                            </div>
+                                                        </div>
+                                                        <p>
+                                                            <button type="submit" class="am-btn am-btn-default" style="width: 90px; background-color: #e4574b; 
+                                                        color: white;">提交</button>
+                                                        </p>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <!--商品上架提示框-->
+
+
+
+                                            <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 保存</button>
+                                            <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="am-u-sm-12 am-u-md-3">
+                                    <div class="am-input-group am-input-group-sm">
+                                        <input type="text" class="am-form-field">
+                                        <span class="am-input-group-btn">
+                    <button class="am-btn am-btn-default" type="button">搜索</button>
+                  </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Row end -->
+                            <br>
+                            <!-- Row start -->
+                            <div class="am-g">
+                                <div class="am-u-sm-12">
+                                    <form class="am-form">
+                                        <table class="am-table am-table-striped am-table-hover table-main">
+                                            <thead>
+                                                <tr>
+                                                    <th class="table-check">
+                                                        <input type="checkbox" />
+                                                    </th>
+                                                    <th class="table-id" style="width: 90px">ID</th>
+                                                    <th class="table-title" style="width: 180px">商品名称</th>
+                                                    <th class="table-type" style="width: 120px">类别</th>
+                                                    <th class="table-author am-hide-sm-only" style="width: 130px">价格（/斤）</th>
+                                                    <th class="table-date am-hide-sm-only" style="width: 180px">数量</th>
+                                                    <th class="table-set">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td><a href="#">上海麒麟瓜</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">2.58</td>
+                                                    <td class="am-hide-sm-only">200</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only" ><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>2</td>
+                                                    <td><a href="#">新疆哈密瓜</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">1.89</td>
+                                                    <td class="am-hide-sm-only">100</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href="#">夏黑葡萄</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">9.8</td>
+                                                    <td class="am-hide-sm-only">50</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td><a href="#">折叠刀</a></td>
+                                                    <td>器皿</td>
+                                                    <td class="am-hide-sm-only">5.5</td>
+                                                    <td class="am-hide-sm-only">30</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td><a href="#">杨梅</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">10</td>
+                                                    <td class="am-hide-sm-only">50</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td><a href="#">勺子不锈钢</a></td>
+                                                    <td>器皿</td>
+                                                    <td class="am-hide-sm-only">3</td>
+                                                    <td class="am-hide-sm-only">50</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>7</td>
+                                                    <td><a href="#">砀山梨</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">4.5</td>
+                                                    <td class="am-hide-sm-only">100</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>8</td>
+                                                    <td><a href="#">榴莲</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">12.8</td>
+                                                    <td class="am-hide-sm-only">15</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>9</td>
+                                                    <td><a href="#">火龙果</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">3.5</td>
+                                                    <td class="am-hide-sm-only">100</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td><a href="#">赣南脐橙</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">9.8</td>
+                                                    <td class="am-hide-sm-only">80</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>11</td>
+                                                    <td><a href="#">荔枝妃子笑</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">12.9</td>
+                                                    <td class="am-hide-sm-only">200</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>12</td>
+                                                    <td><a href="#">美国红提</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">11.9</td>
+                                                    <td class="am-hide-sm-only">20</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>13</td>
+                                                    <td><a href="#">油桃</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">6.9</td>
+                                                    <td class="am-hide-sm-only">100</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>14</td>
+                                                    <td><a href="#">优质香蕉</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">3.8</td>
+                                                    <td class="am-hide-sm-only">100</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="checkbox" />
+                                                    </td>
+                                                    <td>15</td>
+                                                    <td><a href="#">每日水果拼盘</a></td>
+                                                    <td>水果</td>
+                                                    <td class="am-hide-sm-only">9.9</td>
+                                                    <td class="am-hide-sm-only">20</td>
+                                                    <td>
+                                                        <div class="am-btn-toolbar">
+                                                            <div class="am-btn-group am-btn-group-xs">
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span>下架</button>
+                                                                <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="am-cf">
+                                            共 15 条记录
+                                            <div class="am-fr">
+                                                <ul class="am-pagination">
+                                                    <li class="am-disabled"><a href="#">«</a></li>
+                                                    <li class="am-active"><a href="#">1</a></li>
+                                                    <li><a href="#">2</a></li>
+                                                    <li><a href="#">3</a></li>
+                                                    <li><a href="#">4</a></li>
+                                                    <li><a href="#">5</a></li>
+                                                    <li><a href="#">»</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <!--p>注：.....</p-->
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Row end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end right Content here -->
+            <!--</div>-->
+        </div>
+    </div>
+    <!-- /. PAGE INNER  -->
+    </div>
+    <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <script type="text/javascript" src="assets/js/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="assets/js/amazeui.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="assets/js/blockUI.js"></script>
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+</body>
+
+</html>
